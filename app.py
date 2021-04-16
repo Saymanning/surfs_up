@@ -1,29 +1,46 @@
-# 1 Import Flask
-from flask import Flask
-
-# 2 Create an app
+import datetime as dt
+import numpy as np
+import pandas as pd
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+from flask import Flask, jsonify
+engine = create_engine("sqlite:///hawaii.sqlite")
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+Measurement = Base.classes.measurement
+Station = Base.classes.station
+session = Session(engine)
 app = Flask(__name__)
+import app
 
-# 3 Define index route
-@app.route('/')
-def home():
-    print("Server received request from 'About' page...")
-    return ("Welcome to my 'About' page...")
+print("app __name__ = %s", __name__)
 
-
-# 4 Define the about route
-    @app.route("/about")
-    def about():
-        print("Server received request from 'About' page...")
-        return ("Welcome to my 'About' page...")
-
-# Define contact route
-@app.route("/contact")
-def contact():
-    print("Server received request from 'Contact' page...")
-    return ("Welcome to my 'Contact' page...")
-
-# 6 Define main behavior
-if __name__=="__main__":
-    app.run(debug=True)
-
+if __name__ == "__main__":
+    print("app is being run directly.")
+else:
+    print("app is being imported")
+@app.route("/")
+def welcome():
+    return(
+    '''
+    Welcome to the Climate Analysis API!
+    Available Routes:
+    /api/v1.0/precipitation
+    /api/v1.0/stations
+    /api/v1.0/tobs
+    /api/v1.0/temp/start/end
+    ''')
+@app.route("/api/v1.0/precipitation")
+def precipitation():
+   prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+   precipitation = session.query(Measurement.date, Measurement.prcp).\
+    filter(Measurement.date >= prev_year).all()
+   precip = {date: prcp for date, prcp in precipitation}
+   return jsonify(precip)
+@app.route("/api/v1.0/stations")
+def stations():
+    results = session.query(Station.station).all()
+    stations = list(np.ravel(results))
+    return jsonify(stations=stations)
