@@ -2,7 +2,7 @@
 
 ### Overview of the analysis:
  
-The purpose of this analysis was to gather more data and information about temperature trends before opening the surf and ice cream shop. Specifically, temperature data for the months of June and December in Oahu, in order to determine if the surf and ice cream shop business is sustainable year-round.
+The purpose of this analysis was to gather more data and information about temperature trends before opening a surf and ice cream shop in Hawaii on the island of Oahu. Specifically, temperature data for the months of June and December in Oahu, in order to determine if the surf and ice cream shop business is sustainable year-round.
 
 
 **- The first step was to determine the Summary Statistics for June**
