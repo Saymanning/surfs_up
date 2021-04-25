@@ -36,8 +36,13 @@ The purpose of this analysis was to gather more data and information about tempe
 
 
 ### Results: 
- Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
+ 
+ - The average temperatures for June and Decembers are very close. The average temperature for December is 71 degrees and the average for the month of June is 75 degrees. 
+ - The maximum temperatures for December and June are even closer with the max temperature for the month of December at 83 degrees and just 2 degrees higher at 85 for June.
+ - The minimum temperature for December is 56 degrees and the minimum temperature for June is 64 degrees.
 
 
 ### Summary: 
- Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
+The data gathered for temperature trends during the months of December and June shows that the temperature on Oahu is very stable year-round with average temperatures in the low to mid-seventies. These are very pleasant temperatures for enjoying surfing and ice cream (just maybe don't try to eat your ice cream while you are surfing). The maximum temperatures of 83 degrees for December and 85 degrees for June are ideal for water activities such as surfing and enjoying some cold ice cream. Although the minimum temperature for December is 56 degrees and the minimum temperature for June is 64 degrees. These temps may be a bit chilly for ice cream and/or surfing for a few folks. It worth considering having wetsuits available for rent or purchase surfers for these occasional cooler days and possibly options of coffee and tea drinks.
+
+It is recommended that two additional queries should be performed to gather more weather data to consider before opening the surf and ice cream shop. One to gather more information regarding precipitation trends in the months June through November, the months with the highest probability of hurricanes. As well as a query to gather more information on wind, specifically the trade winds that are present in Hawaii from May to October.
